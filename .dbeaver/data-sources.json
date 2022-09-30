@@ -1,0 +1,31 @@
+{
+	"folders": {},
+	"connections": {
+		"sqlite_jdbc-1838bac4584-1ff33144bfa00dfe": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "db.sqlite",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"database": "/home/lyrathor/code-workspace/phpMVC/db.sqlite",
+				"url": "jdbc:sqlite:/home/lyrathor/code-workspace/phpMVC/db.sqlite",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}
