@@ -15,7 +15,7 @@ class NovoCurso implements InterfaceRequisicao{
     public function processaRequisicao()
     {
         require __DIR__."/../../view/novoCurso.php";
-        // TODO Criar a persistencia de dados!
+  
     }
 
 }

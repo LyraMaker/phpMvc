@@ -5,9 +5,12 @@ namespace Alura\Cursos\Infra;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Tools\Setup;
-
 class EntityManagerCreator
 {
+    /**
+     * @return EntityManagerInterface
+     * @throws \Doctrine\ORM\ORMException
+     */
     public function getEntityManager(): EntityManagerInterface
     {
         $paths = [__DIR__ . '/../Entity'];
