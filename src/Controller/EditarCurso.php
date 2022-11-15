@@ -1,25 +1,23 @@
 <?php
 namespace Alura\Cursos\Controller;
 
-use Alura\Cursos\Entity\Curso;
-use Alura\Cursos\Infra\EntityManagerCreator;
 use Alura\Cursos\Controller\Interfaces\InterfaceRequisicao;
+use Alura\Cursos\Infra\EntityManagerCreator;
+use Alura\Cursos\Entity\Curso;
 
-class ListarCursos implements InterfaceRequisicao
-{
-
+class EditarCurso implements InterfaceRequisicao{
     private $repositorioCursos;
-
-    public function __construct()
-    {
+    
+    public function __construct(){
         $entityManager = (new EntityManagerCreator())->getEntityManager();
         $this->repositorioCursos = $entityManager->getRepository(Curso::class);
     }
-
     public function processaRequisicao()
     {
-        $cursos = $this->repositorioCursos->findAll();
-        require __DIR__ . "/../../view/listaCurso.php";
+        $curso = $this->repositorioCursos->find($_GET['id']);
+        require __DIR__."/../../view/editarCurso.php";
     }
+
+    
 }
 ?>

@@ -10,8 +10,8 @@
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 <span><?= $curso->getDescricao(); ?></span>
                 <span>
-                <a class="btn btn-primary mr-1 text-light">Editar</a>
-                <a class="btn btn-danger mr-1 text-light">Excluir</a>
+                <a class="btn-sm font-weight-bold btn-primary mr-1 text-light" href="editar-curso?id=<?= $curso->getId()?>">Editar</a>
+                <a class="btn-sm font-weight-bold btn-danger mr-1 text-light" href="excluir-curso?id=<?= $curso->getId()?>">Excluir</a>
                 </span>
             </li>
         <?php endforeach; ?>

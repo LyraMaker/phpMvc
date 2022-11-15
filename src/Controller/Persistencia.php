@@ -19,9 +19,15 @@ class Persistencia implements InterfaceRequisicao
     {
         $descricao = $_POST['descricao'];
         var_dump($_POST);
-        $curso = new Curso();
+        /**
+         * @var Curso $curso
+         */
+        if (!isset($curso)) {
+            $curso = new Curso();
+        }
+        
         $curso->setDescricao($descricao);
-        $this->entityManager->persist($curso );
+        $this->entityManager->persist($curso);
         $this->entityManager->flush();
         header("Location: ./listar-cursos");
     }
