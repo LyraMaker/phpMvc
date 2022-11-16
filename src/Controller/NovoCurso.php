@@ -14,7 +14,8 @@ class NovoCurso implements InterfaceRequisicao{
     }
     public function processaRequisicao()
     {
-        require __DIR__."/../../view/novoCurso.php";
+        $funcaoPagina = "Novo registro";
+        require __DIR__."/../../view/formulario.php";
   
     }
 

@@ -18,17 +18,19 @@ class Persistencia implements InterfaceRequisicao
     public function processaRequisicao(): void
     {
         $descricao = $_POST['descricao'];
-        var_dump($_POST);
-        /**
-         * @var Curso $curso
-         */
-        if (!isset($curso)) {
-            $curso = new Curso();
-        }
-        
+        $id = $_GET['id'];
+        var_dump($_GET);
+        $curso = new Curso();
         $curso->setDescricao($descricao);
-        $this->entityManager->persist($curso);
+
+        if (!is_null($id) && $id != FALSE) {
+            $curso->setId($id);
+            $this->entityManager->merge($curso);
+        } else {
+            $this->entityManager->persist($curso);
+        }
         $this->entityManager->flush();
+        
         header("Location: ./listar-cursos");
     }
 }

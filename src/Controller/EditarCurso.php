@@ -14,8 +14,11 @@ class EditarCurso implements InterfaceRequisicao{
     }
     public function processaRequisicao()
     {
+            
         $curso = $this->repositorioCursos->find($_GET['id']);
-        require __DIR__."/../../view/editarCurso.php";
+        $funcaoPagina = "Editar registro";
+        $extra = $curso->getDescricao();
+        require __DIR__."/../../view/formulario.php";
     }
 
     
